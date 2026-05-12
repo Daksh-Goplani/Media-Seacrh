@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import CollectionCard from '../components/CollectionCard'
-import { clearCollection } from '../redux/features/collectionSlice'
+import { clearCollection, clearToast } from '../redux/features/collectionSlice'
 
 const CollectionPage = () => {
   const collection = useSelector((state) => state.collection.items)
@@ -9,6 +9,7 @@ const CollectionPage = () => {
 
   const clearAll = () => {
     dispatch(clearCollection())
+    dispatch(clearToast())
   }
 
   return (
